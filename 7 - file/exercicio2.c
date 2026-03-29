@@ -22,6 +22,8 @@ int main(){
                 qntLinhas++;
             }
         }
+        fclose(file);
+        file = NULL;
     }
 
 

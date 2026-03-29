@@ -2,44 +2,44 @@
 
 int main(){
 
-    FILE *file;
+    FILE *file1, *file2;
 
     //criando e preenchendo o arquivo
-    char c;
-    file = fopen("../arq.txt", "w");
+    char caractere;
+    file1 = fopen("../arq.txt", "w");
 
-    if(file == NULL){
+    if(file1 == NULL){
         printf("Arquivo não pode ser criado");
     }
     else{
         do{
             printf("Informe caracter ou 0 para sair: ");
-            scanf(" %c", &c);
+            scanf(" %c", &caractere);
 
-            if(c != '0'){
-                fprintf(file, "%c\n", c);
+            if(caractere != '0'){
+                fprintf(file1, "%c\n", caractere);
             }
 
-        }while(c != '0');
+        }while(caractere != '0');
 
-        fclose(file);
+        fclose(file1);
+        file1 = NULL;
     }
 
     //lendo e exibindo o arquivo
-    file = fopen("../arq.txt", "r");
-    char c2;
+    file2 = fopen("../arq.txt", "r");
 
-    if(file == NULL){
+    if(file2 == NULL){
         printf("Arquivo não existe");
     }
     else{
-        while((c2 = fgetc(file)) != EOF){
-            printf("%c", c2);
+        while((caractere = fgetc(file2)) != EOF){
+            printf("%c", caractere);
         }
 
-        fclose(file);
+        fclose(file2);
+        file2 = NULL;
     }
     
-    file = NULL;
     return 0;
 }

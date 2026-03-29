@@ -24,6 +24,7 @@ int main(){
             }
         }
         fclose(file);
+        file = NULL;
     }
 
     printf("%c aparece %d vezes no arquivo %s", caractere, contador, fileName);
