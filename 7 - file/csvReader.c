@@ -6,8 +6,8 @@
 struct st_aluno{
     char matricula[13];
     char nome_discente[500];
-    int ano_ingresso;
-    int periodo_ingresso;
+    short ano_ingresso;
+    short periodo_ingresso;
     char tipo_discente[50];
     char status_discente[50];
     char nivel_ensino[50];
@@ -49,8 +49,8 @@ int organizarDiscentes(FILE *file, struct st_aluno *alunos){
             switch(coluna++){
                 case 0: strcpy(alunos[contador].matricula, token); break;
                 case 1: strcpy(alunos[contador].nome_discente, token); break;
-                case 2: alunos[contador].ano_ingresso = atoi(token); break;
-                case 3: alunos[contador].periodo_ingresso = atoi(token); break;
+                case 2: alunos[contador].ano_ingresso = (short)atoi(token); break;
+                case 3: alunos[contador].periodo_ingresso = (short)atoi(token); break;
                 case 4: strcpy(alunos[contador].tipo_discente, token); break;
                 case 5: strcpy(alunos[contador].status_discente, token); break;
                 case 6: strcpy(alunos[contador].nivel_ensino, token); break;
